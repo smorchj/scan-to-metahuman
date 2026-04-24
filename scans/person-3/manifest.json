@@ -1,0 +1,16 @@
+{
+  "id": "person-3",
+  "created": "2026-04-24T06:45:33.052290+00:00",
+  "stages": {
+    "01-normalize-scan": {
+      "status": "done",
+      "started": "2026-04-24T06:45:33.052290+00:00",
+      "finished": "2026-04-24T06:45:33.403181+00:00",
+      "outputs": {
+        "mesh": "01-normalized/mesh.obj",
+        "texture": "01-normalized/texture.jpg",
+        "manifest": "01-normalized/scan_manifest.json"
+      }
+    }
+  }
+}

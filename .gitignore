@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Scans: keep structure + manifests, ignore heavy binaries and raw uploads.
+scans/*/source/
+scans/*/01-normalized/*.obj
+scans/*/01-normalized/*.fbx
+scans/*/01-normalized/*.ply
+scans/*/01-normalized/*.glb
+scans/*/01-normalized/*.usdz
+scans/*/01-normalized/*.png
+scans/*/01-normalized/*.jpg
+scans/*/01-normalized/*.jpeg
+!scans/*/**/.gitkeep

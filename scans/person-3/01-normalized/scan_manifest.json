@@ -1,0 +1,19 @@
+{
+  "scan_id": "person-3",
+  "source_upload": "person-3.zip",
+  "primary_mesh": {
+    "path": "mesh.obj",
+    "format": "obj",
+    "triangles": 50910,
+    "sha256": "8467011464d888eeb88da6ed11f0df9f747d840a71df96cbee4771ea148a9d37"
+  },
+  "primary_texture": {
+    "path": "texture.jpg",
+    "format": "jpg",
+    "width": 4096,
+    "height": 4096,
+    "sha256": "025f843fbab72b235e9cf97d6235f9e5d6204772cdf668106ef71516a9ee4c23"
+  },
+  "oversized": false,
+  "notes": []
+}

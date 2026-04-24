@@ -1,0 +1,24 @@
+# Shared config for the Scan-to-Metahuman pipeline. Stage tools read this.
+# Paths are Windows-style because UE + the existing MH->GLB pipeline are
+# Windows-native; Python scripts handle the normalization.
+
+# Active scan id — the orchestrator picks this up and the UE Python driver
+# processes exactly this folder.
+active_scan: null
+
+# UE install + project used by stage 02.
+ue:
+  engine_root: "C:/Program Files/Epic Games/UE_5.6"
+  editor_exe: "C:/Program Files/Epic Games/UE_5.6/Engine/Binaries/Win64/UnrealEditor.exe"
+  project: "C:/Users/smorc/Documents/Unreal Projects/MetaHumans/MetaHumans.uproject"
+
+# Output target inside the UE project's Content folder. Stage 02 imports the
+# normalized mesh here and creates the MetaHuman Identity + resulting MH.
+content_subpath: "ScanCaptures"
+
+# Caps for normalization. Inputs outside these bounds are flagged so the
+# operator can decide whether to downsample before continuing.
+normalize:
+  max_tris: 200000
+  max_texture_px: 4096
+  accept_formats: ["obj", "fbx", "ply", "glb", "usdz"]
