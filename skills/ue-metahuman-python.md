@@ -33,9 +33,10 @@ Python driver. Cross-check any claim against Epic's shipped examples at:
 
 4. **Cloud solve (Mesh to MetaHuman)**
    - `UMetaHumanCharacterEditorSubsystem.request_auto_rigging(character, params)`
-   - Login required once per Editor session via the `LoginToAutoRigService`
-     Blueprint node or its Python equivalent. Operator does this manually
-     the first time; session is persistent afterwards.
+   - Uses the Editor's Epic account session. If the operator is signed
+     into the Epic Games Launcher or the Editor, no extra login is
+     required. `LoginToAutoRigService` is only needed when re-authing
+     (expired token, signed out).
 
 5. **Ingest textures**
    - `UMetaHumanCharacterEditorSubsystem.request_texture_sources(character)`

@@ -3,8 +3,10 @@
 Run the Python driver inside a live UE 5.6 Editor to turn the normalized
 mesh + texture into a rigged MetaHuman Character asset. Operator
 pre-conditions: UE 5.6 open with the project from `_config/pipeline.yaml`,
-MetaHuman + MetaHumanAnimator + MetaHumanCharacter plugins enabled, and
-a valid Epic Auto Rig Service login (one-time per session).
+MetaHuman + MetaHumanAnimator + MetaHumanCharacter plugins enabled. Auto
+Rig Service uses the Editor's Epic account session, so as long as you
+are signed into Epic Games Launcher (or already signed into the Editor)
+no extra login step is needed.
 
 ## Inputs
 
@@ -18,8 +20,8 @@ a valid Epic Auto Rig Service login (one-time per session).
 
 ## Process
 
-1. Operator opens the UE project, confirms the three MH plugins are
-   loaded, signs into Auto Rig Service once (see skills reference).
+1. Operator opens the UE project and confirms the three MH plugins are
+   loaded. Epic account login is inherited from the Editor session.
 2. Operator invokes the driver from the UE Python console:
 
    ```python
@@ -86,6 +88,7 @@ A passing stage means:
   `Engine/Plugins/MetaHuman/MetaHumanAnimator/Content/Python/`.
 - Auto-rig cloud service is flaky. Default retry: 3 attempts with
   exponential backoff (2s, 4s, 8s).
-- If the Editor session has no Auto Rig login, `request_auto_rigging`
-  returns a login-error status; driver fails early with a readable
-  message telling the operator to log in.
+- If the Editor's Epic account session is somehow missing or expired,
+  `request_auto_rigging` returns a login-error status; driver fails
+  early with a readable message. Reopening the project after signing
+  into the Epic Games Launcher fixes it.
